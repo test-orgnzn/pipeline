@@ -89,7 +89,7 @@ func FilterOwnerRunRef(runLister listersalpha.RunLister, apiVersion, kind string
 		}
 		if run.Spec.Ref == nil && run.Spec.Spec == nil {
 			// These are invalid, but just in case they get created somehow, don't panic.
-			return true
+			return false
 		}
 		if run.Spec.Ref != nil && run.Spec.Spec != nil {
 			// These are invalid.
